@@ -56,7 +56,7 @@ class ProductSection extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    product['price']!,
+                    'Rs. ${product['price']}',
                     style: const TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 16,
