@@ -39,7 +39,6 @@ void _login() async {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setBool('isLoggedIn', true);
 
-      // Navigate to Homepage
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => Homepage()),
@@ -55,8 +54,6 @@ void _login() async {
     }
   }
 }
-
-
 
   void _showErrorAlert() {
     QuickAlert.show(
@@ -159,14 +156,12 @@ void _login() async {
                 ),
                 const SizedBox(height: 16),
                 GestureDetector(
-                  // onTap: widget.onSwitchToSignup,
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => SignupPage(
                           onRegistrationComplete: () {
-                            // Navigate back to the login popup after registration
                             Navigator.pop(context); // Close the signup page and return to login
                           },
                         ),

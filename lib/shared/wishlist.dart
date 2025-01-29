@@ -5,8 +5,8 @@
 import 'package:flowershop/shared/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert'; // To decode the product data
-import 'details.dart'; // Import the Details page
+import 'dart:convert'; 
+import 'details.dart'; 
 
 class Wishlist extends StatefulWidget {
   const Wishlist({super.key});
@@ -21,7 +21,7 @@ class _WishlistState extends State<Wishlist> {
   @override
   void initState() {
     super.initState();
-    loadWishlist(); // Load wishlist items when the page is initialized
+    loadWishlist(); // Load wishlist items when the page is initialized.
   }
 
   // Function to load wishlist items from SharedPreferences
@@ -30,21 +30,20 @@ class _WishlistState extends State<Wishlist> {
     List<String> wishlist = prefs.getStringList('wishlist') ?? [];
 
     setState(() {
-      // Explicitly cast the result of jsonDecode to List<Map<String, dynamic>>
       wishlistProducts = wishlist
-          .map((item) => Map<String, dynamic>.from(jsonDecode(item))) // Ensure proper casting
+          .map((item) => Map<String, dynamic>.from(jsonDecode(item))) 
           .toList();
     });
   }
 
-  // Function to remove an item from the wishlist and update SharedPreferences
+  // Remove an item from the wishlist and update SharedPreferences.
   void removeItem(int index) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     wishlistProducts.removeAt(index);  // Remove the item from the list
     List<String> updatedWishlist = wishlistProducts
         .map((item) => jsonEncode(item))
         .toList();
-    await prefs.setStringList('wishlist', updatedWishlist);  // Update the wishlist in SharedPreferences
+    await prefs.setStringList('wishlist', updatedWishlist);  // Update the wishlist in SharedPreferences.
     setState(() {});  // Refresh the UI
   }
 
@@ -54,12 +53,12 @@ class _WishlistState extends State<Wishlist> {
       appBar: AppBar(
         title: const Text(
           'Wishlist',
-          style: TextStyle(color: Colors.white), // Set title color to white
+          style: TextStyle(color: Colors.white), 
         ),
         backgroundColor: Color(0xFFFFACB7), 
-        iconTheme: IconThemeData(color: Color(0xFFA09973)), // Match the color scheme
+        iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       ),
-      backgroundColor: Colors.white, // Set the background color to white
+      backgroundColor: Colors.white, 
       body: wishlistProducts.isEmpty
           ? Center(
               child: Text(
@@ -98,11 +97,10 @@ class _WishlistState extends State<Wishlist> {
                         color: Color(0xFFA09973),
                       ),
                       onPressed: () {
-                        removeItem(index);  // Remove the item when clicked
+                        removeItem(index);  
                       },
                     ),
                     onTap: () {
-                      // Navigate to the product details page
                       Navigator.push(
                         context,
                         MaterialPageRoute(

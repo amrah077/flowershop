@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'navbar.dart';
 import 'dart:convert';
-import 'login.dart';  // Import LoginPopup
+import 'login.dart';  
 
 class Details extends StatefulWidget {
   final Map<String, dynamic> product;
@@ -23,7 +23,7 @@ class _DetailsState extends State<Details> {
   bool isAddedToWishlist = false;
   int quantity = 1;
   double _imageScale = 1.0;
-  String displayedPrice = ""; // Variable to store the price (medium or large)
+  String displayedPrice = ""; // Variable to store the price (medium or large).
   Map<String, dynamic> currentProduct = {};
 
   @override
@@ -61,7 +61,7 @@ class _DetailsState extends State<Details> {
     final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
     if (isLoggedIn) {
-      // Proceed to add to cart if the user is logged in
+      // Add to cart if the user is logged in
       final cartItem = {
         'id': currentProduct['id'],
         'name': currentProduct['name'],
@@ -82,25 +82,24 @@ class _DetailsState extends State<Details> {
         ),
       );
     } else {
-      // Show login popup if not logged in
+      // Show login popup if not logged in.
       showDialog(
         context: context,
         builder: (context) => LoginPopup(
           onSignupClicked: () {
-            // Implement signup logic here if needed
           },
           onClose: () {
-            Navigator.pop(context);  // Close the popup
+            Navigator.pop(context); 
           },
           onSwitchToSignup: () {
-            // Handle switching to signup page if needed
+            // Handle switching to signup page.
           },
         ),
       );
     }
   }
 
-  // Function to load product based on selected color
+  // load product based on selected color.
 void _loadProductByColor(String color) {
   // Simulate the new product data based on selected color
   Map<String, dynamic> newProduct = {
@@ -111,7 +110,7 @@ void _loadProductByColor(String color) {
     'color': color,
     'price': widget.product['price'],
     'largeprice': widget.product['largeprice'],
-    'image': 'assets/products/${widget.product['flower']}${color.toLowerCase()}.webp', // Adjust according to your image files
+    'image': 'assets/products/${widget.product['flower']}${color.toLowerCase()}.webp', 
     'description': 'A beautiful ${widget.product['flower']} flower in $color.',
   };
 
@@ -359,7 +358,7 @@ void _loadProductByColor(String color) {
               const SizedBox(height: 16),
               Center(
                 child: ElevatedButton(
-                  onPressed: _checkLoginAndAddToCart,  // Updated to check login status
+                  onPressed: _checkLoginAndAddToCart,  
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFFFACB7),
                     padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),

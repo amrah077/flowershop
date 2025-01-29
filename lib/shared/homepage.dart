@@ -2,9 +2,9 @@
 
 import 'package:flowershop/shared/bottombar.dart';
 import 'package:flutter/material.dart';
-import 'navbar.dart'; // Import your navbar
-import 'productsection.dart'; // Import your ProductSection widget
-import 'footer.dart'; // Import your Footer widget (assuming the footer is in footer.dart)
+import 'navbar.dart'; 
+import 'productsection.dart'; 
+import 'footer.dart'; 
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -89,10 +89,10 @@ final List<Map<String, dynamic>> singleFlowerBouquets = [
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Set the background color to white
+      backgroundColor: Colors.white, 
       body: Stack(
         children: [
-          Navbar(), // Navbar at the top layer
+          Navbar(), 
           Positioned.fill(
             top: 50,
             child: SingleChildScrollView(
@@ -102,47 +102,41 @@ final List<Map<String, dynamic>> singleFlowerBouquets = [
                   // Hero Slider Section
                   Container(
                     width: double.infinity, // Make the hero image take full width
-                    height: 250, // Set the height for the hero image
+                    height: 250, 
                     child: AnimatedSwitcher(
                       duration: const Duration(seconds: 1), // Smooth transition
                       child: Image.asset(
                         heroImages[_currentIndex],
-                        key: ValueKey<int>(_currentIndex), // Unique key for each image
-                        fit: BoxFit.cover, // Ensures image covers the area fully
+                        key: ValueKey<int>(_currentIndex), // Giving a unique key for each image
+                        fit: BoxFit.cover, 
                         width: double.infinity, // Make sure it covers the full width
                       ),
                     ),
                   ),
 
-                  // Best Sellers Section
                   ProductSection(
                     sectionTitle: 'Best-Sellers',
                     products: bestSellers,
                   ),
 
-                  // Mixed Bouquets Section
                   ProductSection(
                     sectionTitle: 'Mixed Bouquets',
                     products: mixedBouquets,
                   ),
 
-                  // Single Flower Bouquets Section
                   ProductSection(
                     sectionTitle: 'Single Flower Bouquets',
                     products: singleFlowerBouquets,
                   ),
 
-                  // Wedding Arrangements Section
                   ProductSection(
                     sectionTitle: 'Wedding Arrangements',
                     products: weddingArrangements,
                   ),
 
-                  // Add space below Wedding Arrangements Section
-                  const SizedBox(height: 20), // Add some space below this section
+                  const SizedBox(height: 20), 
 
-                  // Footer Section
-                  Footer(), // Your Footer widget (ensure it's defined in footer.dart)
+                  Footer(), 
                 ],
               ),
             ),

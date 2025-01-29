@@ -20,7 +20,7 @@ class Footer extends StatelessWidget {
                       'assets/mainimages/logoimg.png',
                       height: 50,
                     ),
-                    SizedBox(width: 20), // More space between logo and text
+                    SizedBox(width: 20), 
                     Expanded(
                       child: Text(
                         'Bringing elegance and beauty to every occasion with luxurious flowers.',
@@ -34,9 +34,9 @@ class Footer extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
 
-                // Quick Links and Contact Sections in a Row (Flex layout)
+                // Quick Links and Contact Sections in a Row-Flex layout.
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Ensure space between the two columns
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                   children: [
                     // Quick Links Column
                     Expanded(
@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(width: 40), // Space between the columns
+                    SizedBox(width: 40), 
 
                     // Contact Column
                     Expanded(
@@ -101,7 +101,6 @@ class Footer extends StatelessWidget {
                           SizedBox(height: 8),
                           InkWell(
                             onTap: () {
-                              // Navigate to the map or handle link action
                             },
                             child: Row(
                               children: [
@@ -127,7 +126,6 @@ class Footer extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
 
-                // Copyright Section (Centered)
                 Center(
                   child: Text(
                     '© 2024 Tian Hua. All rights reserved.',
@@ -142,7 +140,6 @@ class Footer extends StatelessWidget {
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Logo and Description Section (Same as before for Portrait)
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -164,7 +161,6 @@ class Footer extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
 
-                // Quick Links Section (Vertical layout in Portrait)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -189,7 +185,6 @@ class Footer extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
 
-                // Contact Section (Same as before for Portrait)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -223,9 +218,6 @@ class Footer extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     InkWell(
-                      onTap: () {
-                        // Navigate to the map or handle link action
-                      },
                       child: Row(
                         children: [
                           Icon(
@@ -247,7 +239,6 @@ class Footer extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
 
-                // Copyright Section (Centered)
                 Center(
                   child: Text(
                     '© 2024 Tian Hua. All rights reserved.',

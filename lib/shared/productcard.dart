@@ -3,7 +3,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'details.dart'; // Import the Details widget file (update the path if needed)
+import 'details.dart'; 
 
 class ProductCard extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -16,14 +16,14 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0), // Add vertical padding between cards
+      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0), // Adding vertical padding between cards.
       child: GestureDetector(
         onTap: () {
           // Log the product selected
           print('Selected product: ${product['name']}');
         },
         child: Card(
-          color: Colors.white, // Set card background to white
+          color: Colors.white,
           elevation: 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -37,7 +37,7 @@ class ProductCard extends StatelessWidget {
                 height: 250,
                 width: double.infinity,
                 child: Image.asset(
-                  product['image'] ?? 'assets/images/default.jpg', // Fallback to default image if null
+                  product['image'] ?? 'assets/images/default.jpg', 
                   fit: BoxFit.cover,
                 ),
               ),
@@ -72,7 +72,7 @@ class ProductCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
 
-                    // Product Description (Short preview for the card)
+                    // Product Description 
                     Text(
                       product['description'] ?? 'No description available',
                       style: const TextStyle(
@@ -80,8 +80,6 @@ class ProductCard extends StatelessWidget {
                         fontSize: 14,
                         color: Colors.black54,
                       ),
-                      maxLines: 2, // Limit to 2 lines to keep it brief
-                      overflow: TextOverflow.ellipsis, // Adds an ellipsis if the text is too long
                     ),
                     const SizedBox(height: 8),
 

@@ -5,7 +5,7 @@ import 'package:flowershop/shared/checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import 'details.dart'; // Import the details page
+import 'details.dart'; 
 
 class CartPage extends StatefulWidget {
   @override
@@ -29,13 +29,13 @@ class _CartPageState extends State<CartPage> {
     });
   }
 
-  // Function to remove an item from the cart and update SharedPreferences
+  // Remove an item from the cart and update SharedPreferences.
   void _removeItem(int index) async {
     final prefs = await SharedPreferences.getInstance();
     cartItems.removeAt(index); // Remove the item from the list
     final updatedCart = cartItems.map((item) => jsonEncode(item)).toList();
-    await prefs.setStringList('cart', updatedCart); // Update the cart in SharedPreferences
-    setState(() {}); // Refresh the UI
+    await prefs.setStringList('cart', updatedCart); // Update the cart in SharedPreferences.
+    setState(() {}); // Refresh UI
   }
 
   @override
@@ -62,13 +62,13 @@ class _CartPageState extends State<CartPage> {
               itemBuilder: (context, index) {
                 final item = cartItems[index];
 
-                // Debugging to check if largeprice exists
+                // Debug to check if largeprice exists
                 print('Cart Item: ${item['name']}, Large Price: ${item['largeprice']}');
 
                 return ListTile(
                   leading: item['image'] != null
                       ? Image.asset(
-                          item['image'], // Assuming the image URL is stored in 'image'
+                          item['image'], 
                           width: 50,
                           height: 50,
                           fit: BoxFit.cover,
@@ -86,7 +86,7 @@ class _CartPageState extends State<CartPage> {
                       color: Color(0xFFA09973),
                     ),
                     onPressed: () {
-                      _removeItem(index); // Remove the item when clicked
+                      _removeItem(index); // Remove the item when icon clicked.
                     },
                   ),
                   onTap: () {
@@ -99,12 +99,12 @@ class _CartPageState extends State<CartPage> {
                     // Debugging to verify product details passed to Details page
                     print('Navigating to Details with product: $productWithLargePrice');
 
-                    // Navigate to the details page when the product is tapped
+                    // Navigate to the details page when the product is pressed.
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Details(
-                          product: productWithLargePrice, // Pass the updated product data to the details page
+                          product: productWithLargePrice, // Pass the updated product data to the details page.
                         ),
                       ),
                     );
@@ -112,21 +112,20 @@ class _CartPageState extends State<CartPage> {
                 );
               },
             ),
-      // Floating action button for checkout
+      //checkout- FLOATING ACTION BUTTON !!!
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(16.0),
         child: FloatingActionButton(
           onPressed: () {
-            // Handle the checkout logic here, for example:
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => CheckoutPage()), // Create CheckoutPage for checkout
+              MaterialPageRoute(builder: (context) => CheckoutPage()), 
             );
           },
-          backgroundColor: Color(0xFFFFACB7), // Consistent with your app's theme
+          backgroundColor: Color(0xFFFFACB7), 
           child: Icon(
             Icons.shopping_cart_checkout,
-            color: Colors.white, // Button icon color
+            color: Colors.white, 
           ),
         ),
       ),

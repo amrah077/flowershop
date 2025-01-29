@@ -1,11 +1,11 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unused_import
+//ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unused_import
 
 import 'package:flowershop/shared/bottombar.dart';
 import 'package:flowershop/shared/cart.dart';
 import 'package:flowershop/shared/wishlist.dart';
 import 'package:flutter/material.dart';
-import 'navbar.dart'; // Assuming your navbar is in shared/navbar.dart
-import 'footer.dart'; // Import the footer widget
+import 'navbar.dart'; 
+import 'footer.dart'; 
 
 class AboutUsPage extends StatelessWidget {
   @override
@@ -13,29 +13,28 @@ class AboutUsPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.white, // Set the background color to white
+          color: Colors.white, 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Centered Heading
               Padding(
                 padding: EdgeInsets.only(top: 80.0, left: 16, right: 16),
-                child: Center( // Centered the heading
+                child: Center( // Center the heading
                   child: Text(
                     'About Tian Hua',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: MediaQuery.of(context).orientation == Orientation.portrait
                           ? 32
-                          : 40, // Adjust font size based on orientation
+                          : 40, // Adjusting font size depending on orientation
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
-                      color: Color(0xFFA09973), // Accent color
+                      color: Color(0xFFA09973), 
                     ),
                   ),
                 ),
               ),
-              // Check orientation before calling _buildSection
+
               MediaQuery.of(context).orientation == Orientation.portrait
                   ? _buildSection(
                       'At Tian Hua, we believe flowers are more than just plants; they are a way to communicate emotions, express love, and bring beauty to every moment. As a luxury floral business, we are dedicated to offering only the finest, handpicked flowers that meet our rigorous standards for freshness and elegance. Our wide range of carefully curated floral arrangements is designed to suit every occasion, from weddings and anniversaries to corporate events and intimate gatherings.',
@@ -90,7 +89,7 @@ class AboutUsPage extends StatelessWidget {
             text,
             style: TextStyle(
               fontSize: 16,
-              color: Color(0xFFA09973), // Accent color
+              color: Color(0xFFA09973), 
               fontFamily: 'Roboto',
             ),
           ),
@@ -98,7 +97,7 @@ class AboutUsPage extends StatelessWidget {
           LayoutBuilder(
             builder: (context, constraints) {
               return MediaQuery.of(context).orientation == Orientation.landscape
-                  ? Container() // Don't render image/paragraph in portrait
+                  ? Container() 
                   : Image.asset(
                       imagePath,
                       height: constraints.maxWidth > 600 ? 300 : 200,
@@ -114,7 +113,7 @@ class AboutUsPage extends StatelessWidget {
 
   Widget _buildLandscapeSection(String text, String imagePath) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 32), // Increased margin
+      padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 32), 
       child: Row(
         children: [
           Expanded(
@@ -141,7 +140,7 @@ class AboutUsPage extends StatelessWidget {
     );
   }
 
-  // The Logos section now uses a Flex layout for landscape mode
+  // The logod section uses a Flex layout for landscape mode.
   Widget _buildLogosSection(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 14, horizontal: 20),
@@ -161,7 +160,7 @@ class AboutUsPage extends StatelessWidget {
             )
           : Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Row( // Landscape view: horizontal flex layout
+              child: Row( //horizontal flex layout
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _buildLogo('assets/aboutus/infoimg1.png', 'FARM-FRESH QUALITY',
@@ -193,7 +192,7 @@ class AboutUsPage extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFFA09973), // Accent color
+              color: Color(0xFFA09973), 
               fontFamily: 'Roboto',
             ),
           ),
@@ -203,7 +202,7 @@ class AboutUsPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 14,
-              color: Color(0xFFA09973), // Accent color
+              color: Color(0xFFA09973), 
               fontFamily: 'Roboto',
             ),
           ),

@@ -2,9 +2,9 @@
 
 import 'package:flowershop/shared/bottombar.dart';
 import 'package:flutter/material.dart';
-import 'navbar.dart'; // Import the Navbar widget
-import 'productcard.dart'; // Import the ProductCard widget
-import 'footer.dart'; // Import the Footer widget
+import 'navbar.dart'; 
+import 'productcard.dart'; 
+import 'footer.dart'; 
 
 class AllProductsPage extends StatefulWidget {
   const AllProductsPage({Key? key}) : super(key: key);
@@ -74,20 +74,18 @@ class _AllProductsPageState extends State<AllProductsPage> {
     bool isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
 
     return Scaffold(
-      backgroundColor: Colors.white, // Set background color
-      body: SingleChildScrollView( // Wrap everything in a SingleChildScrollView
+      backgroundColor: Colors.white, 
+      body: SingleChildScrollView( 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Wrap Navbar with a Container to give it a fixed height
             Container(
-              height: 100, // Adjust the height of the Navbar as needed
+              height: 100, 
               child: Navbar(),
             ),
 
-            // Main Heading: All Products
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 8.0),
+              padding: const EdgeInsets.fromLTRB(16.0, 0, 8.0, 8.0),
               child: Text(
                 'All Products',
                 style: TextStyle(
@@ -118,20 +116,18 @@ class _AllProductsPageState extends State<AllProductsPage> {
               ),
             ),
 
-            SizedBox(height: 16.0), // Spacing between the search bar and the filter button
+            SizedBox(height: 16.0),
 
-
-            // Product Grid (ListView) showing all products
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(), // Prevent scrolling here
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: isLandscape ? 2 : 1, // Adjust number of columns based on orientation
+                  crossAxisCount: isLandscape ? 2 : 1, // Adjust the number of columns based on orientation.
                   crossAxisSpacing: 16.0,
                   mainAxisSpacing: 16.0,
-                  childAspectRatio: 0.7, // Adjust aspect ratio of each card
+                  childAspectRatio: 0.7, 
                 ),
                 itemCount: filteredProducts.length,
                 itemBuilder: (context, index) {
@@ -148,25 +144,6 @@ class _AllProductsPageState extends State<AllProductsPage> {
         ),
       ),
       bottomNavigationBar: BottomNavBar(),
-    );
-  }
-
-  Widget filterButton(String label) {
-    return ElevatedButton(
-      onPressed: () {
-        // Implement the logic for the filter button click
-        // e.g., show a dialog or dropdown for filtering
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xFFA09973), // Custom button color
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(color: Colors.white),
-      ),
     );
   }
 }

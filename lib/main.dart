@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: Homepage(), // Reference the HomePage widget
-      debugShowCheckedModeBanner: false, // Disable the debug banner
+      home: Homepage(), 
+      debugShowCheckedModeBanner: false, 
     );
   }
 }

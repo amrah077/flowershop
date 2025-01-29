@@ -2,8 +2,8 @@
 
 import 'package:flowershop/shared/bottombar.dart';
 import 'package:flutter/material.dart';
-import 'navbar.dart'; // Import your Navbar widget
-import 'footer.dart'; // Import your Footer widget
+import 'navbar.dart'; 
+import 'footer.dart'; 
 
 class ContactPage extends StatelessWidget {
   @override
@@ -11,15 +11,15 @@ class ContactPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: Navbar(), // Use Navbar as the appBar here
+        child: Navbar(), 
       ),
-      backgroundColor: Colors.white, // Ensure the background is white
+      backgroundColor: Colors.white, 
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Contact Us Heading
             Padding(
-              padding: const EdgeInsets.only(top: 80, left: 16, right: 16), // Reduced top padding
+              padding: const EdgeInsets.only(top: 80, left: 16, right: 16), 
               child: Text(
                 'Contact Us',
                 style: TextStyle(
@@ -30,7 +30,7 @@ class ContactPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            // Contact Us Paragraph Section
+         
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               child: Column(
@@ -46,10 +46,10 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
             ),
-            // Contact Form Section
+            
             LayoutBuilder(
               builder: (context, constraints) {
-                // Check if the device is in landscape mode
+               
                 if (constraints.maxWidth > constraints.maxHeight) {
                   // Landscape mode layout
                   return Padding(
@@ -57,7 +57,7 @@ class ContactPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Left Column with Name and Email Fields
+                        
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,8 +119,7 @@ class ContactPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(width: 16), // Space between the columns
-                        // Right Column with Message Field
+                        SizedBox(width: 16), 
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,10 +156,9 @@ class ContactPage extends StatelessWidget {
                                 alignment: Alignment.centerRight,
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    // Handle the form submission
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFA09973), // Accent color
+                                    backgroundColor: Color(0xFFA09973), 
                                     padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8),
@@ -170,7 +168,7 @@ class ContactPage extends StatelessWidget {
                                     'Send Message',
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Colors.white, // Text color for the button
+                                      color: Colors.white, 
                                     ),
                                   ),
                                 ),
@@ -182,7 +180,7 @@ class ContactPage extends StatelessWidget {
                     ),
                   );
                 } else {
-                  // Portrait mode layout (default design, no changes here)
+                
                   return Padding(
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -272,15 +270,14 @@ class ContactPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Submit Button - Aligned to the right
+                        // Submit Button.
                         Align(
                           alignment: Alignment.centerRight,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Handle the form submission
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFFA09973), // Accent color
+                              backgroundColor: Color(0xFFA09973), 
                               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
@@ -290,7 +287,7 @@ class ContactPage extends StatelessWidget {
                               'Send Message',
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.white, // Text color for the button
+                                color: Colors.white, 
                               ),
                             ),
                           ),
@@ -301,9 +298,8 @@ class ContactPage extends StatelessWidget {
                 }
               },
             ),
-            // Add some margin between content and footer
             SizedBox(height: 40),
-            Footer(), // Assuming you have a Footer widget
+            Footer(),
           ],
         ),
       ),

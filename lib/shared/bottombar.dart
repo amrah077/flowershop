@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors, use_super_parameters, unused_import, dead_code, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart'; // Add this import
+import 'package:shared_preferences/shared_preferences.dart'; 
 import 'homepage.dart';
 import 'allproducts.dart';
 import 'aboutus.dart';
 import 'contact.dart';
 import 'wishlist.dart';
 import 'cart.dart';
-import 'login.dart'; // Login page
+import 'login.dart'; 
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class BottomNavBar extends StatelessWidget {
   // Updated function to check login status
   Future<void> checkLoginStatusAndNavigate(BuildContext context, String page) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false; // Check actual login status
+    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false; 
 
     if (isLoggedIn) {
       if (page == 'wishlist') {

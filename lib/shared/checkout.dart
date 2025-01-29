@@ -29,7 +29,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     final prefs = await SharedPreferences.getInstance();
     final cart = prefs.getStringList('cart') ?? [];
 
-    // Parse the cart items and calculate the total price
+    // Parse the cart items and calculate the total price.
     setState(() {
       cartItems = cart.map((item) => jsonDecode(item) as Map<String, dynamic>).toList();
       totalAmount = cartItems.fold(
@@ -49,7 +49,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
           'Checkout',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xFFFFACB7), // Theme color
+        backgroundColor: Color(0xFFFFACB7), 
         iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       ),
       body: cartItems.isEmpty

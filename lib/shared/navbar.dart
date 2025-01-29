@@ -58,7 +58,7 @@ class _NavbarState extends State<Navbar> {
     await prefs.setBool('isLoggedIn', false);
 
     setState(() {
-      _isLogoutPopupOpen = false; // Close the logout popup without rebuilding the page
+      _isLogoutPopupOpen = false; // Close the logout popup without rebuilding the page.
     });
   }
 
@@ -68,14 +68,14 @@ class _NavbarState extends State<Navbar> {
       context: context,
       builder: (context) => LoginPopup(
         onClose: () {
-          Navigator.pop(context); // Close the dialog
+          Navigator.pop(context); // Close the login page.
         },
         onSwitchToSignup: () {
-          Navigator.pop(context); // Close the dialog and navigate to signup
+          Navigator.pop(context); // Close the login page and navigate to signup.
           _navigateToSignup(context);
         },
         onSignupClicked: () {
-          Navigator.pop(context); // Close the dialog and navigate to signup
+          Navigator.pop(context); // Close the login page and navigate to signup.
           _navigateToSignup(context);
         },
       ),
@@ -120,73 +120,20 @@ Widget build(BuildContext context) {
                 context: context,
                 builder: (context) => LogoutPopup(
                   onLogout: () async {
-                    await prefs.setBool('isLoggedIn', false); // Update login status
+                    await prefs.setBool('isLoggedIn', false); 
                   },
                   onClose: () {
-                    Navigator.pop(context); // Close the dialog
+                    Navigator.pop(context); 
                   },
                 ),
               );
             } else {
-              // Show the LoginPopup
               _showLoginPopup();
             }
           },
         ),
       ],
     ),
-    // drawer: Drawer(
-    //   child: Material(
-    //     color: Colors.white,
-    //     elevation: 10,
-    //     child: ListView(
-    //       padding: EdgeInsets.zero,
-    //       children: [
-    //         const DrawerHeader(
-    //           decoration: BoxDecoration(
-    //             color: Color(0xFFFFACB7), // Same as AppBar background color
-    //           ),
-    //           child: Center(
-    //             child: Image(
-    //               image: AssetImage('assets/mainimages/logoimg.png'),
-    //               height: 50,
-    //             ),
-    //           ),
-    //         ),
-    //         _buildMenuItem('Home', Icons.home, () {
-    //           Navigator.pushReplacement(
-    //             context,
-    //             MaterialPageRoute(builder: (context) => Homepage()),
-    //           );
-    //         }),
-    //         _buildMenuItem('All Products', Icons.list, () {
-    //           Navigator.pushReplacement(
-    //             context,
-    //             MaterialPageRoute(builder: (context) => AllProductsPage()),
-    //           );
-    //         }),
-    //         _buildMenuItem('About Us', Icons.info, () {
-    //           Navigator.pushReplacement(
-    //             context,
-    //             MaterialPageRoute(builder: (context) => AboutUsPage()),
-    //           );
-    //         }),
-    //         _buildMenuItem('Contact', Icons.contact_mail, () {
-    //           Navigator.pushReplacement(
-    //             context,
-    //             MaterialPageRoute(builder: (context) => ContactPage()),
-    //           );
-    //         }),
-    //         _buildMenuItem('Wishlist', Icons.favorite, () {
-    //           _checkLoginStatusAndNavigate('wishlist');
-    //         }),
-    //         _buildMenuItem('Cart', Icons.shopping_cart, () {
-    //           _checkLoginStatusAndNavigate('cart');
-    //         })
-    //       ],
-    //     ),
-    //   ),
-    // ),
   );
 }
 
@@ -208,7 +155,6 @@ Widget build(BuildContext context) {
       MaterialPageRoute(
         builder: (context) => SignupPage(
           onRegistrationComplete: () {
-            // Handle post-registration actions
           },
         ),
       ),

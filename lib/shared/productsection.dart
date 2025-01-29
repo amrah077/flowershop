@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'details.dart'; // Import your Details page
+import 'details.dart'; 
 
 class ProductSection extends StatelessWidget {
   final String sectionTitle;
@@ -20,7 +20,7 @@ class ProductSection extends StatelessWidget {
         print('Selected ${product["name"]}');
       },
       child: Card(
-        color: Colors.white, // Set card background to white
+        color: Colors.white, 
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -35,7 +35,7 @@ class ProductSection extends StatelessWidget {
                 product['image']!,
                 fit: BoxFit.cover,
                 width: double.infinity,
-                height: 250, // Standard height for both modes
+                height: 250, 
               ),
             ),
 
@@ -77,7 +77,7 @@ class ProductSection extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      // Navigate to Details page
+                      // Navigate to Details page.
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -129,12 +129,12 @@ class ProductSection extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          // Product Carousel or Grid
+          // Products Grid.
           isLandscape
-              ? // In landscape mode, use GridView to display two cards side by side
+              ? // In landscape mode, 2 in a row grid.
               GridView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(), // Prevent scroll in GridView
+                  physics: NeverScrollableScrollPhysics(), 
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, // Two items per row in landscape
                     crossAxisSpacing: 10,
@@ -145,7 +145,7 @@ class ProductSection extends StatelessWidget {
                     return buildProductCard(products[index], context);
                   },
                 )
-              : // In portrait mode, use PageView to display one card at a time
+              : // In portrait mode, use PageView to display one card at a time.
               SizedBox(
                   height: 350,
                   child: PageView.builder(

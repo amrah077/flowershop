@@ -42,7 +42,7 @@ class LogoutPopup extends StatelessWidget {
                     Icons.close,
                     color: Color(0xFFA09973),
                   ),
-                  onPressed: onClose, // Use onClose callback to close the popup
+                  onPressed: onClose, 
                 ),
               ],
             ),
@@ -59,7 +59,7 @@ class LogoutPopup extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: onClose, // Close the popup
+                  onPressed: onClose, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     side: BorderSide(color: Color(0xFFA09973)),
@@ -76,9 +76,8 @@ class LogoutPopup extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    onLogout(); // Perform the logout action
+                    onLogout(); 
 
-                    // Replace all routes and navigate to the homepage
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (context) => Homepage()),

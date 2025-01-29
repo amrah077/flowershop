@@ -24,7 +24,6 @@ class _SignupPageState extends State<SignupPage> {
 
   void _register() {
     if (_formKey.currentState!.validate()) {
-      // Simulate successful registration
       print("User registered successfully");
       Navigator.pushReplacement(
       context,
@@ -32,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
         builder: (context) => Homepage(), 
       ),
     );
-      widget.onRegistrationComplete(); // Redirect back to login
+      widget.onRegistrationComplete();
     }
   }
 
@@ -87,14 +86,14 @@ Widget build(BuildContext context) {
       ),
       centerTitle: true,
     ),
-    body: Center( // Center the content of the body
-      child: SingleChildScrollView( // Enable scrolling in case of overflow
+    body: Center( 
+      child: SingleChildScrollView( 
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center content vertically
-            crossAxisAlignment: CrossAxisAlignment.stretch, // Stretch to fill the width
+            mainAxisAlignment: MainAxisAlignment.center, 
+            crossAxisAlignment: CrossAxisAlignment.stretch, 
             children: [
               const Text(
                 "Create Your Account",
