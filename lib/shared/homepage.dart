@@ -4,7 +4,6 @@ import 'package:flowershop/shared/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'navbar.dart'; 
 import 'productsection.dart'; 
-import 'footer.dart'; 
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -135,8 +134,6 @@ final List<Map<String, dynamic>> singleFlowerBouquets = [
                   ),
 
                   const SizedBox(height: 20), 
-
-                  Footer(), 
                 ],
               ),
             ),

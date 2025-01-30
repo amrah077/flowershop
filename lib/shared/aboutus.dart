@@ -4,8 +4,7 @@ import 'package:flowershop/shared/bottombar.dart';
 import 'package:flowershop/shared/cart.dart';
 import 'package:flowershop/shared/wishlist.dart';
 import 'package:flutter/material.dart';
-import 'navbar.dart'; 
-import 'footer.dart'; 
+import 'navbar.dart';  
 
 class AboutUsPage extends StatelessWidget {
   @override
@@ -67,7 +66,6 @@ class AboutUsPage extends StatelessWidget {
                       'assets/aboutus/flex3.jpg',
                     ),
               _buildLogosSection(context),
-              Footer(),
             ],
           ),
         ),

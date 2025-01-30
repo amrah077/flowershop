@@ -4,7 +4,6 @@ import 'package:flowershop/shared/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'navbar.dart'; 
 import 'productcard.dart'; 
-import 'footer.dart'; 
 
 class AllProductsPage extends StatefulWidget {
   const AllProductsPage({Key? key}) : super(key: key);
@@ -137,9 +136,6 @@ class _AllProductsPageState extends State<AllProductsPage> {
                 },
               ),
             ),
-
-            // Footer
-            Footer(),
           ],
         ),
       ),
