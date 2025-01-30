@@ -6,7 +6,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFFFACB7),
+      color:Theme.of(context).primaryColor,
       padding: EdgeInsets.all(20), // Added more padding
       child: MediaQuery.of(context).orientation == Orientation.landscape
           ? Column(

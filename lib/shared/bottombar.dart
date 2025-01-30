@@ -36,7 +36,7 @@ class BottomNavBar extends StatelessWidget {
          context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              backgroundColor: Colors.white, 
+              backgroundColor: Theme.of(context).secondaryHeaderColor,
               title: Text(
                 'Login Required',
                 style: TextStyle(
@@ -59,8 +59,8 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.white,
-      selectedItemColor: const Color(0xFFFFACB7),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      selectedItemColor: Theme.of(context).primaryColor,
       unselectedItemColor: const Color(0xFFA09973),
       showSelectedLabels: false,
       showUnselectedLabels: false,

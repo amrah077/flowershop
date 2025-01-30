@@ -125,7 +125,7 @@ void _loadProductByColor(String color) {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: Navbar(),
@@ -160,12 +160,10 @@ void _loadProductByColor(String color) {
               const SizedBox(height: 16),
               Text(
                 currentProduct['name'] ?? 'Unknown Product',
-                style: const TextStyle(
-                  fontFamily: 'Roboto',
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
               ),
               const SizedBox(height: 8),
               Row(
@@ -173,11 +171,11 @@ void _loadProductByColor(String color) {
                 children: [
                   Text(
                     "Price: Rs. $displayedPrice",
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFFFACB7),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   IconButton(
@@ -194,23 +192,24 @@ void _loadProductByColor(String color) {
                     },
                     icon: Icon(
                       isAddedToWishlist ? Icons.favorite : Icons.favorite_border,
-                      color: isAddedToWishlist ? Colors.red : Colors.black87,
+                      color: isAddedToWishlist ? Colors.red : Theme.of(context).textTheme.bodyLarge?.color,
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 16),
-              const Text(
+              Text(
                 "Description: ",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Theme.of(context).textTheme.bodyLarge?.color
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 currentProduct['description'] ?? 'No description available',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16, color: Theme.of(context).textTheme.bodyLarge?.color),
               ),
               const SizedBox(height: 16),
               Text(
@@ -218,6 +217,7 @@ void _loadProductByColor(String color) {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Theme.of(context).textTheme.bodyLarge?.color
                 ),
               ),
               const SizedBox(height: 8),
@@ -234,7 +234,7 @@ void _loadProductByColor(String color) {
                         });
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFFACB7),
+                        backgroundColor: Theme.of(context).primaryColor,
                         padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -256,7 +256,7 @@ void _loadProductByColor(String color) {
                         });
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFFACB7),
+                        backgroundColor: Theme.of(context).primaryColor,
                         padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -314,6 +314,7 @@ void _loadProductByColor(String color) {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Theme.of(context).textTheme.bodyLarge?.color
                 ),
               ),
               const SizedBox(height: 8),
@@ -328,7 +329,7 @@ void _loadProductByColor(String color) {
                     },
                     icon: Icon(
                       Icons.remove,
-                      color: Color(0xFFFFACB7),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   Container(
@@ -350,7 +351,7 @@ void _loadProductByColor(String color) {
                     },
                     icon: Icon(
                       Icons.add,
-                      color: Color(0xFFFFACB7),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ],
@@ -360,7 +361,7 @@ void _loadProductByColor(String color) {
                 child: ElevatedButton(
                   onPressed: _checkLoginAndAddToCart,  
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFFFACB7),
+                    backgroundColor: Theme.of(context).primaryColor,
                     padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
                     textStyle: TextStyle(
                       fontSize: 18,

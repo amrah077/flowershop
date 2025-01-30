@@ -23,7 +23,7 @@ class ProductCard extends StatelessWidget {
           print('Selected product: ${product['name']}');
         },
         child: Card(
-          color: Colors.white,
+          color: Theme.of(context).secondaryHeaderColor,
           elevation: 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -63,11 +63,11 @@ class ProductCard extends StatelessWidget {
                     // Product Price
                     Text(
                       'Rs. ${product['price'] ?? 'Price not available'}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFFFFACB7),
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -86,7 +86,7 @@ class ProductCard extends StatelessWidget {
                     // View Details Button
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFFFACB7),
+                        backgroundColor: Theme.of(context).primaryColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),

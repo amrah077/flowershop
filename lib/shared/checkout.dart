@@ -43,13 +43,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Checkout',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xFFFFACB7), 
+        backgroundColor: Theme.of(context).primaryColor,
         iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       ),
       body: cartItems.isEmpty
@@ -68,7 +68,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     // Cart Items
                     Text(
                       'Cart Items',
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge?.color),
                     ),
                     SizedBox(height: 16),
                     ListView.builder(
@@ -97,13 +97,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     // Total Price
                     Text(
                       'Total: Rs. ${totalAmount.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge?.color),
                     ),
                     SizedBox(height: 16.0),
                     // Customer Information Form
                     Text(
                       'Customer Information',
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Theme.of(context).textTheme.bodyLarge?.color),
                     ),
                     SizedBox(height: 16.0),
                     Form(
@@ -189,7 +189,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFFFFACB7),
+                              backgroundColor: Theme.of(context).primaryColor,
                               padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),

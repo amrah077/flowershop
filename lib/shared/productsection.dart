@@ -20,7 +20,7 @@ class ProductSection extends StatelessWidget {
         print('Selected ${product["name"]}');
       },
       child: Card(
-        color: Colors.white, 
+        color: Theme.of(context).secondaryHeaderColor,
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -57,17 +57,18 @@ class ProductSection extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     'Rs. ${product['price']}',
-                    style: const TextStyle(
+                    style:  TextStyle(
                       fontFamily: 'Roboto',
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFFFACB7),
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   const SizedBox(height: 8),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFFACB7),
+                      backgroundColor: Theme.of(context).primaryColor,
+
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),

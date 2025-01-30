@@ -11,6 +11,7 @@ import 'contact.dart';
 import 'wishlist.dart';
 import 'cart.dart';
 import 'logout.dart';
+import 'package:flowershop/main.dart';
 
 class Navbar extends StatefulWidget {
   const Navbar({Key? key}) : super(key: key);
@@ -85,9 +86,9 @@ class _NavbarState extends State<Navbar> {
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    backgroundColor: Colors.white,
+    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     appBar: AppBar(
-      backgroundColor: const Color(0xFFFFACB7),
+      backgroundColor: Theme.of(context).primaryColor,
       iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       elevation: 0,
       title: MediaQuery.of(context).orientation == Orientation.landscape
@@ -105,6 +106,19 @@ Widget build(BuildContext context) {
               height: 50,
             ),
       actions: [
+         // Dark Mode Toggle Button
+          IconButton(
+            icon: Icon(
+              themeNotifier.value == ThemeMode.dark ? Icons.light_mode : Icons.dark_mode,
+              color: Color(0xFFA09973), // Match your theme color
+            ),
+            onPressed: () {
+              setState(() {
+                themeNotifier.value =
+                    themeNotifier.value == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+              });
+            },
+          ),
         IconButton(
           icon: const Icon(
             Icons.person,

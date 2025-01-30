@@ -50,15 +50,16 @@ class _WishlistState extends State<Wishlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Wishlist',
           style: TextStyle(color: Colors.white), 
         ),
-        backgroundColor: Color(0xFFFFACB7), 
+        backgroundColor:Theme.of(context).scaffoldBackgroundColor, 
         iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       ),
-      backgroundColor: Colors.white, 
+      
       body: wishlistProducts.isEmpty
           ? Center(
               child: Text(
@@ -84,12 +85,12 @@ class _WishlistState extends State<Wishlist> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Theme.of(context).textTheme.bodyLarge?.color
                       ),
                     ),
                     subtitle: Text(
                       "Price: ${product['price']}",
-                      style: TextStyle(fontSize: 16, color: Colors.black54),
+                      style: TextStyle(fontSize: 16, color: Theme.of(context).textTheme.bodyLarge?.color),
                     ),
                     trailing: IconButton(
                       icon: Icon(

@@ -74,7 +74,7 @@ class _AllProductsPageState extends State<AllProductsPage> {
     bool isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
 
     return Scaffold(
-      backgroundColor: Colors.white, 
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView( 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

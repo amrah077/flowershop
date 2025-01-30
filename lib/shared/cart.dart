@@ -41,13 +41,13 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
           'Cart',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color(0xFFFFACB7),
+        backgroundColor: Theme.of(context).primaryColor,
         iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       ),
       body: cartItems.isEmpty
@@ -122,7 +122,7 @@ class _CartPageState extends State<CartPage> {
               MaterialPageRoute(builder: (context) => CheckoutPage()), 
             );
           },
-          backgroundColor: Color(0xFFFFACB7), 
+          backgroundColor: Theme.of(context).primaryColor,
           child: Icon(
             Icons.shopping_cart_checkout,
             color: Colors.white, 

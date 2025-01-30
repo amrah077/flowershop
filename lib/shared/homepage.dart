@@ -89,7 +89,7 @@ final List<Map<String, dynamic>> singleFlowerBouquets = [
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, 
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           Navbar(), 

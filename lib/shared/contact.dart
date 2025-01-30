@@ -13,7 +13,7 @@ class ContactPage extends StatelessWidget {
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: Navbar(), 
       ),
-      backgroundColor: Colors.white, 
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
