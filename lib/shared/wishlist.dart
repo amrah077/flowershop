@@ -56,7 +56,7 @@ class _WishlistState extends State<Wishlist> {
           'Wishlist',
           style: TextStyle(color: Colors.white), 
         ),
-        backgroundColor:Theme.of(context).scaffoldBackgroundColor, 
+        backgroundColor:Theme.of(context).primaryColor, 
         iconTheme: IconThemeData(color: Color(0xFFA09973)), 
       ),
       

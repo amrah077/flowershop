@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_super_parameters, unused_import, dead_code, use_build_context_synchronously
+// ignore_for_file: prefer_const_constructors, use_super_parameters, unused_import, dead_code, use_build_context_synchronously, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; 
@@ -55,9 +55,20 @@ class BottomNavBar extends StatelessWidget {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
+@override
+Widget build(BuildContext context) {
+  return Container(
+    decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.1), // Light shadow color
+          blurRadius: 8, // Increases softness
+          spreadRadius: 2, // Slightly expands the shadow
+          offset: Offset(0, -4), // Moves shadow upwards
+        ),
+      ],
+    ),
+    child: BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       selectedItemColor: Theme.of(context).primaryColor,
@@ -124,6 +135,7 @@ class BottomNavBar extends StatelessWidget {
           label: 'Cart',
         ),
       ],
-    );
-  }
+    ),
+  );
+}
 }

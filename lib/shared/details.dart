@@ -271,43 +271,72 @@ void _loadProductByColor(String color) {
                 ],
               ),
               const SizedBox(height: 16),
-              if (currentProduct['category'] == 'single') 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () => _loadProductByColor('Pink'),
-                      child: CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Colors.pink,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    GestureDetector(
-                      onTap: () => _loadProductByColor('White'),
-                      child: CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    GestureDetector(
-                      onTap: () => _loadProductByColor('Red'),
-                      child: CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Colors.red,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    GestureDetector(
-                      onTap: () => _loadProductByColor('Yellow'),
-                      child: CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Colors.yellow,
-                      ),
-                    ),
-                  ],
-                ),
+if (currentProduct['category'] == 'single') 
+  Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      GestureDetector(
+        onTap: () => _loadProductByColor('Pink'),
+        child: Container(
+          padding: const EdgeInsets.all(2), // Adjust border thickness
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Color(0xFFA09973), width: 2), // Border color and width
+          ),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundColor: Colors.pink,
+          ),
+        ),
+      ),
+      const SizedBox(width: 8),
+      GestureDetector(
+        onTap: () => _loadProductByColor('White'),
+        child: Container(
+          padding: const EdgeInsets.all(2),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Color(0xFFA09973), width: 2),
+          ),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundColor: Colors.white,
+          ),
+        ),
+      ),
+      const SizedBox(width: 8),
+      GestureDetector(
+        onTap: () => _loadProductByColor('Red'),
+        child: Container(
+          padding: const EdgeInsets.all(2),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Color(0xFFA09973),width: 2),
+          ),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundColor: Colors.red,
+          ),
+        ),
+      ),
+      const SizedBox(width: 8),
+      GestureDetector(
+        onTap: () => _loadProductByColor('Yellow'),
+        child: Container(
+          padding: EdgeInsets.all(2),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Color(0xFFA09973), width: 2),
+          ),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundColor: Colors.yellow,
+          ),
+        ),
+      ),
+    ],
+  ),
+
               const SizedBox(height: 16),
               Text(
                 "Quantity: ",
