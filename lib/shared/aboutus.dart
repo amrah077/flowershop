@@ -74,7 +74,6 @@ class AboutUsPage extends StatelessWidget {
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: Navbar(),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 

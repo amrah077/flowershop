@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_super_parameters, unused_import, dead_code, use_build_context_synchronously, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, use_super_parameters, unused_import, dead_code, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; 
@@ -36,7 +36,7 @@ class BottomNavBar extends StatelessWidget {
          context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              backgroundColor: Theme.of(context).secondaryHeaderColor,
+              backgroundColor: Colors.white, 
               title: Text(
                 'Login Required',
                 style: TextStyle(
@@ -55,20 +55,9 @@ class BottomNavBar extends StatelessWidget {
     }
   }
 
-@override
-Widget build(BuildContext context) {
-  return Container(
-    decoration: BoxDecoration(
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.1), // Light shadow color
-          blurRadius: 8, // Increases softness
-          spreadRadius: 2, // Slightly expands the shadow
-          offset: Offset(0, -4), // Moves shadow upwards
-        ),
-      ],
-    ),
-    child: BottomNavigationBar(
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       selectedItemColor: Theme.of(context).primaryColor,
@@ -135,7 +124,6 @@ Widget build(BuildContext context) {
           label: 'Cart',
         ),
       ],
-    ),
-  );
-}
+    );
+  }
 }
